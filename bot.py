@@ -9,11 +9,10 @@ bot_token='5891017864:AAEsJkCGk5hQ-1AZh4Vm14qajhhbhXx9Z-M'
 C=TelegramClient('session',api_id,api_hash)
 bot = TelegramClient('bot', api_id, api_hash).start(bot_token=bot_token)
 
-@C.on(events.NewMessage(outgoing=True,pattern='\.work'))
+@C.on(events.NewMessage(pattern='\.hi'))
 async def worker(event):
     chat = await event.get_chat()
-    await C.send_message(chat,f"WORKING")
+    await C.edit_message(event,chat,f"WORKING")
 
- 
 C.start()
 C.run_until_disconnected()
