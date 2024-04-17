@@ -1,7 +1,7 @@
 from telethon import *
 from telethon.sync import *
 import asyncio
-from modules.base import outgoing_commands, edited_handler
+from modules.base import outgoing_commands, editing_messages
 
 api_id = 1992385
 api_hash = "a470b85e27ed03b83571c42c499da412"
@@ -26,7 +26,7 @@ async def start_client(session_name):
 
     @client.on(events.MessageEdited)
     async def editing_messages(event):
-        await edited_handler(event)
+        await editing_messages(event)
 
     await client.run_until_disconnected()
 
