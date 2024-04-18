@@ -19,5 +19,5 @@ async def outgoing_commands(event):
     if event.raw_text == ".alive":
         await event.edit("Yes Sax Sux")
 
-async def editing_messages(event):
+async def edited_handler(event):
     pass
