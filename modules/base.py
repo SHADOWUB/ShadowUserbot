@@ -19,7 +19,7 @@ from modules.gemini import *
 async def outgoing_commands(event):
     if event.raw_text == ".alive":
         await event.edit("Yes Sax Sux")
-    elif event.raw_text.lower().startswith("yo gemini")
+    elif event.raw_text.lower().startswith("yo gemini"):
         await gemini_do(event)
 
 async def edited_handler(event):
