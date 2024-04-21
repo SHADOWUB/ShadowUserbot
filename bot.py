@@ -20,7 +20,7 @@ async def start_client(session_name):
     ownerid = me.id
     await client.get_dialogs() # cache all chats so it wont cause troubles like chat not found
     
-    @client.on(events.NewMessage(outgoing=True))
+    @client.on(events.NewMessage(outgoing=True,incoming=True))
     async def outgoing_messages(event):
         await outgoing_commands(event)
 
