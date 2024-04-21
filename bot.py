@@ -14,7 +14,7 @@ async def start_client(session_name):
     try:
         await client.start()
     except:
-        print(client_name+" ded")
+        print("shadow"+" ded")
         return None
     me = await client.get_me()
     ownerid = me.id
