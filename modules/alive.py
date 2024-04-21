@@ -15,7 +15,5 @@ from telethon.tl.types import InputPeerChannel
 from telethon.tl.types import PeerUser, PeerChat, PeerChannel
 
 
-async def alive_hdlr(event):
-    if event.is_private:  
-        await event.respond('alive')
-        
+async def alive_hdlr(event):    
+    await event.reply('alive')
