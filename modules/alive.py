@@ -15,5 +15,4 @@ from telethon.tl.types import InputPeerChannel
 from telethon.tl.types import PeerUser, PeerChat, PeerChannel
 
 async def alive_hdlr(event):
-    await event.reply(file="https://graph.org/file/0afb5f356a3836220a029.mp4", caption="I am Alive")
-    
+    await event.reply("ALIVE",file="https://graph.org/file/0afb5f356a3836220a029.mp4")
