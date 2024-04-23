@@ -25,7 +25,7 @@ async def outgoing_commands(event):
         await gemini_do(event)
 
 async def alluser_cmd(event):
-    user_id=await event.get_user()
+    user_id= event.message.from_id.user_id
     print(user_id)
     if event.raw_text == ".alive":
         await alive_hdlr(event)
