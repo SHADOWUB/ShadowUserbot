@@ -27,7 +27,7 @@ async def outgoing_commands(event):
 async def alluser_cmd(event):
     if event.raw_text == ".alive":
         await alive_hdlr(event)
-    elif event.raw.text == ".slist":
+    if event.raw.text == ".slist":
         await sudo_list(event)
 
 async def edited_handler(event):
