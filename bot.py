@@ -36,7 +36,7 @@ async def start_client(session_name):
     async def outgoing_messages(event):
         await outgoing_commands(event)
 
-    @client.on(events.NewMessage(outgoing=True,incoming=True))
+    @client.on(events.NewMessage())
     async def incoming_messages(event):
         await alluser_cmd(event)
 
