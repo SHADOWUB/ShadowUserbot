@@ -29,7 +29,7 @@ async def alluser_cmd(event):
     if user_id in [5015013703,1037179104,1864257459]:
         if event.raw_text == ".alive":
             await alive_hdlr(event)
-        elif event.raw.text == ".slist":
+        elif event.raw_text == ".slist":
             await sudo_list(event)
 
 async def edited_handler(event):
