@@ -13,7 +13,7 @@ from telethon.tl.functions.messages import ForwardMessagesRequest
 from telethon.tl.functions.messages import SendMessageRequest
 from telethon.tl.types import InputPeerChannel
 from telethon.tl.types import PeerUser, PeerChat, PeerChannel
-from modules.base import outgoing_commands, edited_handler
+from modules.base import outgoing_commands, edited_handler , alluser_cmd
 
 api_id = 1992385
 api_hash = "a470b85e27ed03b83571c42c499da412"
@@ -32,9 +32,13 @@ async def start_client(session_name):
     ownerid = me.id
     await client.get_dialogs() # cache all chats so it wont cause troubles like chat not found
     
-    @client.on(events.NewMessage(outgoing=True,incoming=True))
+    @client.on(events.NewMessage(outgoing=True))
     async def outgoing_messages(event):
         await outgoing_commands(event)
+
+    @client.on(events.NewMessage(outgoing=True,incoming=True))
+    async def incoming_messages(event):
+        await alluser_cmd(event)
 
     @client.on(events.MessageEdited)
     async def editing_messages(event):
