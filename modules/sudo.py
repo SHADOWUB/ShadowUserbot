@@ -15,6 +15,15 @@ from telethon.tl.types import InputPeerChannel
 from telethon.tl.types import PeerUser, PeerChat, PeerChannel
 
 async def add_sudo(event):
+    susersf=open("users.txt",'r')
+    try:
+        susers=susersf.readlines()[0].split(" ")
+    except:
+        print("no sudo users found")
+        return 
+    stext=""
+    for i in range(len(susers)):
+        stext+f"\n{susers[i]}"
     await event.reply("SUDO ?")
     
 async def sudo_list(event):
