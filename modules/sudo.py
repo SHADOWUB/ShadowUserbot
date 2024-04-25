@@ -18,4 +18,13 @@ async def add_sudo(event):
     await event.reply("SUDO ?")
     
 async def sudo_list(event):
-    await event.reply("SUDOWODO ?")
+    susersf=open("users.txt",'r')
+    try:
+        susers=susersf.readlines()[0].split(" ")
+    except:
+        await event.reply("No Sudo Users Found")  
+        return 
+    stext=""
+    for i in range(len(susers)):
+        stext+f"\n{susers[i]}"
+    await event.reply("SUDO USERS : \n"+stext)
